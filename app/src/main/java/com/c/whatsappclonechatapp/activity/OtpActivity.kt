@@ -67,11 +67,10 @@ class OtpActivity : AppCompatActivity() {
 
         binding.button.setOnClickListener {
             if(binding.otpNumber.text!!.isEmpty()){
-
                 binding.textinputlayout.error = "Enter OTP!!"
             }else{
                 dialog.show()
-                val credential = PhoneAuthProvider.getCredential(verificationId!!, binding.otpNumber.text.toString())
+                val credential = PhoneAuthProvider.getCredential(verificationId, binding.otpNumber.text.toString())
                 auth.signInWithCredential(credential)
                     .addOnCompleteListener{
                         if(it.isSuccessful){
