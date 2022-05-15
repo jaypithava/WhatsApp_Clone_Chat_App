@@ -1,11 +1,13 @@
 package com.c.whatsappclonechatapp.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.c.whatsappclonechatapp.R
+import com.c.whatsappclonechatapp.activity.ChatActivity
 import com.c.whatsappclonechatapp.databinding.ChatUserItemLayoutBinding
 import com.c.whatsappclonechatapp.model.UserModel
 
@@ -28,6 +30,12 @@ class ChatAdapter(var context: android.content.Context, var list: ArrayList<User
         var user = list[position]
         Glide.with(context).load(user.imageUrl).into(holder.binding.userImage)
         holder.binding.userName.text = user.name
+
+        holder.itemView.setOnClickListener {
+            val intent=Intent(context,ChatActivity::class.java)
+            intent.putExtra("uid",user.uid)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

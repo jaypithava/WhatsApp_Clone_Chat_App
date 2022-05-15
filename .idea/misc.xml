@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/drawable/ciecle_bg.xml" value="0.15" />
+        <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.217" />
+        <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/activity_chat.xml" value="0.23229166666666667" />
         <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/activity_main.xml" value="0.23229166666666667" />
         <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/activity_otp.xml" value="0.23229166666666667" />
         <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/activity_phone_number.xml" value="0.23229166666666667" />
