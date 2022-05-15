@@ -7,6 +7,9 @@
         <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/activity_otp.xml" value="0.23229166666666667" />
         <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/activity_phone_number.xml" value="0.23229166666666667" />
         <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/activity_profile.xml" value="0.21822916666666667" />
+        <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/chat_user_item_layout.xml" value="0.23125" />
+        <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/data_placeholder_layout.xml" value="0.23229166666666667" />
+        <entry key="..\:/WhatsAppCloneChatApp/app/src/main/res/layout/fragment_chat.xml" value="0.23229166666666667" />
       </map>
     </option>
   </component>
