@@ -16,7 +16,7 @@ class MessageAdapter(var context: Context, val list: ArrayList<MessageModel>) :
 
 
     var itemSent = 1
-    var itemReceive = 1
+    var itemReceive = 2
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == itemSent)
