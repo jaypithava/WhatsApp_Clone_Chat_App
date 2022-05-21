@@ -34,6 +34,8 @@ class ChatAdapter(var context: android.content.Context, var list: ArrayList<User
         holder.itemView.setOnClickListener {
             val intent=Intent(context,ChatActivity::class.java)
             intent.putExtra("uid",user.uid)
+            intent.putExtra("username",user.name)
+            intent.putExtra("userImage",user.imageUrl)
             context.startActivity(intent)
         }
     }

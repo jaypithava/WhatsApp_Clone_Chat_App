@@ -1,10 +1,9 @@
 package com.c.whatsappclonechatapp.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.widget.Toast
-import com.c.whatsappclonechatapp.R
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.c.whatsappclonechatapp.adapter.MessageAdapter
 import com.c.whatsappclonechatapp.databinding.ActivityChatBinding
 import com.c.whatsappclonechatapp.model.MessageModel
@@ -14,7 +13,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ChatActivity : AppCompatActivity() {
 
@@ -26,6 +24,8 @@ class ChatActivity : AppCompatActivity() {
 
     private lateinit var senderRoom: String
     private lateinit var receiverRoom: String
+    private lateinit var userName: String
+    private lateinit var userImage: String
 
     private lateinit var list: ArrayList<MessageModel>
 
@@ -36,10 +36,20 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
 
         senderUid = FirebaseAuth.getInstance().uid.toString()
 
         receiverUid = intent.getStringExtra("uid")!!
+        userName = intent.getStringExtra("username")!!
+        userImage = intent.getStringExtra("userImage")!!
+
+        binding.ivBack.setOnClickListener {
+            onBackPressed()
+        }
+
+        binding.userName.text=userName
+        Glide.with(this).load(userImage).into(binding.userImage)
 
         list = ArrayList()
 
@@ -48,6 +58,8 @@ class ChatActivity : AppCompatActivity() {
         receiverRoom = receiverUid + senderUid
 
         database = FirebaseDatabase.getInstance()
+
+
 
         binding.imageSend.setOnClickListener {
             if (binding.messageBox.text.isEmpty()) {
@@ -90,5 +102,10 @@ class ChatActivity : AppCompatActivity() {
 
             })
 
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
